@@ -1,4 +1,6 @@
-var randNum = "";
+$(document).ready(function() {
+
+var randNum = $("#random-num");
 var playerGuess = "";
 var crystal1 = "";
 var crystal2 = "";
@@ -7,6 +9,7 @@ var crystal4 = "";
 
 //display randomn number between 19 -120
 
+randNum.text(Math.floor((Math.random() * 120) + 19));
 
 
 //display player guess
@@ -23,3 +26,6 @@ var crystal4 = "";
 
 //generate new numbers for buttons and random number upon win or loss and restart
     //score should remain
+
+
+});
