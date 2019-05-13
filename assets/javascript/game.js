@@ -28,7 +28,7 @@ var targetNum = $("#random-num").text(Math.floor((Math.random() * 102) + 19));
 $(".crystal-image").on("click", function() {
     var crystalValue = ($(this).attr("data-crystalvalue"));
     crystalValue = parseInt(crystalValue);
-   $("player-num").text(playerGuess += crystalValue);
+   $("#player-num").text(playerGuess += crystalValue);
 });
 
 
