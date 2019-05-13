@@ -6,6 +6,7 @@ var crystal1 = $("button-one");
 var crystal2 = $("button-two");
 var crystal3 = $("button-three");
 var crystal4 = $("button-four");
+var num = 1;
 
 //display randomn number between 19 -120
 
@@ -14,7 +15,11 @@ randNum.text(Math.floor((Math.random() * 101) + 19));
 
 //display player guess
 
+playerGuess.text(Math.floor((Math.random() * 101) + 19));
+
 //display four buttons
+
+
     //assign each a random number between 1-12 
     //on button click, add number to player guess
 
