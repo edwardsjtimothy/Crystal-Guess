@@ -1,15 +1,15 @@
 $(document).ready(function() {
 
 var randNum = $("#random-num");
-var playerGuess = "";
-var crystal1 = "";
-var crystal2 = "";
-var crystal3 = "";
-var crystal4 = "";
+var playerGuess = $("player-num");
+var crystal1 = $("button-one");
+var crystal2 = $("button-two");
+var crystal3 = $("button-three");
+var crystal4 = $("button-four");
 
 //display randomn number between 19 -120
 
-randNum.text(Math.floor((Math.random() * 120) + 19));
+randNum.text(Math.floor((Math.random() * 101) + 19));
 
 
 //display player guess
