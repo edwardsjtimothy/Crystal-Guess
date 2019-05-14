@@ -11,6 +11,13 @@ $(document).ready(function () {
     $("#wins").text(playerWins);
     $("#losses").text(playerLosses);
     $("#player-num").text(playerGuess);
+    
+    // game rest function
+
+    gameReset = function() {
+        targetNum = $("#random-num").text(Math.floor((Math.random() * 102) + 19));
+        playerGuess = 0; 
+    };
 
     //display randomn number between 19 -120
 
@@ -34,26 +41,23 @@ $(document).ready(function () {
         var crystalValue = ($(this).attr("data-crystalvalue"));
         crystalValue = parseInt(crystalValue);
         $("#player-num").text(playerGuess += crystalValue);
-        playerGuess += crystalValue;
 
         //if player guess = random number, add one to wins
 
         if (playerGuess === targetNum) {
             ++playerWins;
-            $
+            gameReset();
         }
-
+    
         // //if player guess > random number, add one to losses 
-
+    
         else if (playerGuess >= targetNum) {
             ++playerLosses;
-
-
+            gameReset();
         }
 
     });
 
 
 
-
-});
+}); 
