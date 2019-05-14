@@ -1,25 +1,15 @@
-#button-one {
-    /* background: url(assets\images\Purple_Crystal.png); */
-}
 
-#button-two {
-    /* background: url(assets\images\Aura-Quartz.jpg); */
-}
-
-#button-three {
-    /* background: url(assets\images\Yellow_Crystal.jpg); */
-}
-
-#button-four {
-    /* background: url(assets\images\Green_Crystal.jpg); */
-}
-
-.btn {
-    width: 100px;
-    height: 100px;
+body {
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 img { 
     width: 100px;
     height: 100px;
+    margin: 40px; 
+    border: 1px solid black;
+}
+
+.jumbotron {
+    background-color: lightblue;
 }

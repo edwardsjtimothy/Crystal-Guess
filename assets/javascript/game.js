@@ -45,14 +45,14 @@ $(document).ready(function () {
         //if player guess = random number, add one to wins
 
         if (playerGuess === targetNum) {
-            ++playerWins;
+            $("#wins").text(playerWins)
             gameReset();
         }
     
         // //if player guess > random number, add one to losses 
     
         else if (playerGuess >= targetNum) {
-            ++playerLosses;
+            $("#losses").text(++playerLosses);
             gameReset();
         }
 
