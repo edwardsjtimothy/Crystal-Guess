@@ -15,27 +15,33 @@
 
 <body>
 
-  <div>
-    <h1>Crystal Collector</h1>
-  </div>
-
-
-  <div id="random-num"></div>
-  <div id="player-num"></div>
-  
-  <div class="score-board">
-  <div id="wins"></div>
-  <div id="losses"></div>
-  <div id="test"></div>
-  </div>
-
-
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-3 col-md-3 col-lg-2 col-xl-2"></div>
-      <div class="col-sm-6 col-md-6 col-lg-8 col-xl-8">
-          <div class="crystal-btn"></div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Crystal Collector</h1>
+          <p class="lead">Each crystal has a secret number. Click the crystals to add its number to your score. If you match the target number you win! If you exceed the target number you lose. Good luck!</p>
+        </div>
       </div>
+
+ 
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3 col-md-3 col-lg-2 col-xl-2"></div>
+    <div class="score-board col-sm-6 col-md-6 col-lg-8 col-xl-8">
+      <div class="score-headings">Target Number</div>
+      <div id="random-num"></div>
+
+      <div class="score-headings">Your Number</div>
+      <div id="player-num"></div>
+
+      <div class="score-headings">Wins</div>
+      <div id="wins"></div>
+
+      <div class="score-headings">Losses</div>
+      <div id="losses"></div>
+
+      <div class="crystal-btn"></div>
+
+
       <div class="col-sm-3 col-md-3 col-lg-2 col-xl-2"></div>
     </div>
   </div>
