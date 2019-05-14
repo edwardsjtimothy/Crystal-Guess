@@ -16,7 +16,7 @@ $(document).ready(function () {
 
     gameReset = function() {
         targetNum = $("#random-num").text(Math.floor((Math.random() * 102) + 19));
-        playerGuess = 0; 
+        $("#player-num").text(playerGuess = 0); 
     };
 
     //display randomn number between 19 -120
@@ -45,13 +45,13 @@ $(document).ready(function () {
         //if player guess = random number, add one to wins
 
         if (playerGuess === targetNum) {
-            $("#wins").text(playerWins)
+            $("#wins").text(++playerWins)
             gameReset();
         }
     
         // //if player guess > random number, add one to losses 
     
-        else if (playerGuess >= targetNum) {
+        else if (playerGuess >= 16) {
             $("#losses").text(++playerLosses);
             gameReset();
         }
