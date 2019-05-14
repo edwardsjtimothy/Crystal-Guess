@@ -1,6 +1,7 @@
 
 body {
     font-family: 'Roboto Condensed', sans-serif;
+    background-image: url(../images/congruent_pentagon.png);
 }
 
 img { 
@@ -11,5 +12,12 @@ img {
 }
 
 .jumbotron {
-    background-color: lightblue;
+    background-color:#1C2833;
+    color: #ABEBC6;
+    margin-bottom: 0px;
+}
+
+.score-board {
+    background-color:#FEF5E7;
+    text-align: center;
 }
