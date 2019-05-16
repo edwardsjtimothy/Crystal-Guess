@@ -11,6 +11,7 @@ $(document).ready(function () {
     var targetNum = (Math.floor((Math.random() * 102) + 19));
 
     //display scoreboard 
+   
     $("#wins").text(playerWins);
     $("#losses").text(playerLosses);
     $("#player-num").text(playerGuess);
@@ -22,21 +23,9 @@ $(document).ready(function () {
     gameReset = function () {
         targetNum = (Math.floor((Math.random() * 102) + 19));
         $("#player-num").text(playerGuess = 0);
-        $("#random-num").text(targetNum);
-        
-        
-        
+        $("#random-num").text(targetNum);          
     };
 
-
-    crystalNum = function () {
-        for (i = 0; i < 4; i++) {
-            var secretNums = "";
-            secretNums.attr("data-crystalvalue", hiddenNums[i]);
-            $(".crystal-btn").append(secretNums);
-            console.log(secretNums);
-        };
-    };
 
     //generate array of 4 numbers 
 
@@ -46,18 +35,13 @@ $(document).ready(function () {
 
             var crystals = $("<img>");
             crystals.addClass("crystal-image");
-            crystals.attr("data-crystalvalue", hiddenNums[i]);
             crystals.attr("src", crystalImg[i]);
             $(".crystal-btn").append(crystals);
-
-            newNum = function() {
-                $("data-crystalvalue").removeData(hiddenNums[i]);
-
-            }
         };
     };
 
     crystalImage();
+    
     //on button click, assign crystal a value 
 
     $(".crystal-image").on("click", function () {
@@ -81,12 +65,4 @@ $(document).ready(function () {
 
     });
 
-
-
 });
-
-// for (i = 0; i < 4; i++) {
-        //     // var secretNums = $();
-        //     // secretNums.attr("data-crystalvalue", hiddenNums[i]);
-        //     $(".crystal-btn").append(hiddenNums[i]);
-        // };
