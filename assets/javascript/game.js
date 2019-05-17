@@ -1,6 +1,3 @@
-/* Ok, so the issue I am having all stems from the function beginning on line 35. One of the parameters of the asignment is to you Jquery to manipulate the DOM. I thought it would be cool to have a function generate all the attributes of my crystal buttons and assign them random numbers. All of that works fine. The issue is that when the game restarts, I can't figure out how to get the buttons to generate new numbers. If you plug the crystalImage function into the gameReset function, it generates four new buttons and I am unsure if there is away to just call the portion of the function that generates new random numbers. If need be, I can just manually make buttons from the cyrstal photos rather than doing it in JS and have JS only handle the random number assignment which I think then would be pretty easy to call when the game resets but that is alot messier than what I have now. Also, I have tried to remove the random number generation from the cyrstalImage function and call the new function when the game resets but I can't figure out how to get the new number to push to the var crystals on line 39 so that it can be  appended to the buttons. Any ideas? Other than this the game works great and is finished! */
-
-
 $(document).ready(function () {
 
     var playerGuess = 0;
@@ -26,18 +23,29 @@ $(document).ready(function () {
     gameReset = function () {
         targetNum = (Math.floor((Math.random() * 102) + 19));
         $("#player-num").text(playerGuess = 0);
-        $("#random-num").text(targetNum);          
+        $("#random-num").text(targetNum); 
+        $("crystal-btn").removeData
+        hiddenNums = [];
+        removeImgs();
+        crystalImage();
+
     };
 
+    //removes images and date from crystal button upon reset
 
-    //generate array of 4 numbers 
+    removeImgs = function () {
+        $(".crystal-btn").empty();
+    };
+
+    //generate array of 4 numbers and crystal images
 
     crystalImage = function () {
         for (i = 0; i < 4; i++) {
             hiddenNums.push(Math.floor(Math.random() * 12) + 1);
-
+            
             var crystals = $("<img>");
             crystals.addClass("crystal-image");
+            crystals.attr("data-crystalvalue", hiddenNums[i]);
             crystals.attr("src", crystalImg[i]);
             $(".crystal-btn").append(crystals);
         };
@@ -55,7 +63,7 @@ $(document).ready(function () {
         //if player guess = random number, add one to wins
 
         if (playerGuess === targetNum) {
-            $("#wins").text(++playerWins)
+            $("#wins").text(++playerWins);
             gameReset();
         }
 
