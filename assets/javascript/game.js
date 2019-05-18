@@ -24,11 +24,10 @@ $(document).ready(function () {
         targetNum = (Math.floor((Math.random() * 102) + 19));
         $("#player-num").text(playerGuess = 0);
         $("#random-num").text(targetNum); 
-        $("crystal-btn").removeData
         hiddenNums = [];
         removeImgs();
         crystalImage();
-
+        playGame();
     };
 
     //removes images and date from crystal button upon reset
@@ -40,7 +39,7 @@ $(document).ready(function () {
     //generate array of 4 numbers and crystal images
 
     crystalImage = function () {
-        for (i = 0; i < 4; i++) {
+        for (var i = 0; i < 4; i++) {
             hiddenNums.push(Math.floor(Math.random() * 12) + 1);
             
             var crystals = $("<img>");
@@ -54,26 +53,32 @@ $(document).ready(function () {
     crystalImage();
     
     //on button click, assign crystal a value 
+    function playGame() {
 
-    $(".crystal-image").on("click", function () {
-        var crystalValue = ($(this).attr("data-crystalvalue"));
-        crystalValue = parseInt(crystalValue);
-        $("#player-num").text(playerGuess += crystalValue);
+        $(".crystal-image").on("click", function () {
+            var crystalValue = ($(this).attr("data-crystalvalue"));
+            // console.log(crystalValue, "cry value")
+    
+            crystalValue = parseInt(crystalValue);
+            $("#player-num").text(playerGuess += crystalValue);
+    
+            //if player guess = random number, add one to wins
+    
+            if (playerGuess === targetNum) {
+                $("#wins").text(++playerWins);
+                gameReset();
+            }
+    
+            // //if player guess > random number, add one to losses 
+    
+            else if (playerGuess >= targetNum) {
+                $("#losses").text(++playerLosses);
+                gameReset();
+            }
+    
+        });
+    }
 
-        //if player guess = random number, add one to wins
-
-        if (playerGuess === targetNum) {
-            $("#wins").text(++playerWins);
-            gameReset();
-        }
-
-        // //if player guess > random number, add one to losses 
-
-        else if (playerGuess >= targetNum) {
-            $("#losses").text(++playerLosses);
-            gameReset();
-        }
-
-    });
+    playGame();
 
 });
